@@ -1,0 +1,176 @@
+//!  Advantage of MySQL
+    1) Cross Platform
+    2) used with multiple language (PHP, NodeJs, Python, C#)
+    3) MySQL software is open source
+    4) MySQL is RDBMS
+    5) The MySQL Database server is fast, reliable, scalable, and easy to use.
+
+
+//! Popular Website using MySQL
+    1) Facebook
+    2) Twitter
+    3) Google
+    4) Wikipedia
+    4) Youtube
+    5) Flickr
+    6) Pinterest
+
+
+
+
+//! Database Create using MySQL CMD 
+         
+        CREATE DATABASE product_db;  // নতুন ডাটাবেস তৈরী করার জন্য এটি ব্যবহার করা হয়।
+
+
+//! Create a table in product_db Database 
+
+        CREATE TABLE product(
+            
+            id INT,
+            name VARCHAR(20),
+            company VARCHAR(30),
+            price INT
+            
+        )
+
+
+//! Insert a single data in product Table
+
+        INSERT INTO product (id, name, price, company)
+        VALUES(1, "Rice", 200, "LTD" );
+
+
+//! Insert multiple data in product Table
+
+        INSERT INTO product (id, name, price, company)
+        VALUES
+                (3, "DD", 200, "LTD" ),
+                (4, "EE", 200, "LTD" ),
+                (5, "GGF", 200, "LTD" ),
+                (6, "QQ", 200, "LTD" ),
+                (7, "BB", 200, "LTD" )
+
+
+
+//! Limitations / Constraints -- সীমাবদ্ধতা তৈরীকরা
+
+    => List of Limitations in MySQL
+
+        1) NOT NULL  // এটি খালি রাখা যাবে না।
+        2) UNIQUE    // UNIQUE ডাটা দেওয়ার জন্য এটি ব্যবহার করা হয়।
+        3) DEFAULT   // DEFAULT ডাটা দেওয়ার জন্য এটি ব্যবহার করা হয়।
+        4) CHECK    // (age>=18)
+        5) FOREIGN KEY
+        6) CHILD KEY
+
+
+    => Create table using Limitations / Constraints
+
+            CREATE TABLE student (
+                id INT NOT NULL UNIQUE,
+                name VARCHAR(50) NOT NULL,
+                age INT NOT NULL CHECK (age>=18),
+                gender VARCHAR(20) NOT NULL,
+                phone VARCHAR(10) NOT NULL UNIQUE,
+                city VARCHAR(40) NOT NULL DEFAULT "CTG"
+              )
+
+
+    => Insert multiple data in product Table
+
+        INSERT INTO student(id, name, age, phone, gender, city)
+        VALUES  (1,"Amit", 28,  01814331350, "Male", "CTG"),
+                (2,"Amit", 28,  01814331351, "Male", "CTG"),
+                (3,"Amit", 28,  01814331352, "Male", "CTG"),
+                (4,"Amit", 28,  01814331353, "Male", "CTG")
+
+
+    => Insert a single data in product Table
+
+        INSERT INTO student(id, name, age, phone, gender, city)
+        VALUES  (1,"Amit", 28,  01814331350, "Male", "CTG"),
+
+
+
+//! MySQL SELECT With WHERE Clause
+
+MySQL ডেটাবেস থেকে ডেটা নির্বাচন করার সাথে WHERE ক্লজ ব্যবহার করা হয় যেটি নির্দিষ্ট শর্তের মাধ্যমে নির্দিষ্ট সারির তথ্য নির্বাচন করে। 
+
+        SELECT * FROM টেবিল_নাম WHERE শর্ত; // * মানে সকল কলাম কে সিলেক্ট করা।
+        SELECT * FROM `student` WHERE 1
+        SELECT name FROM `student` WHERE 1  // শুধুমাত্র name কলাম কে সিলেক্ট করা হয়েছে।
+        SELECT id, name, age FROM `student` WHERE 1  // শুধুমাত্র id, name, age কলাম কে সিলেক্ট করা হয়েছে।
+
+
+    //! AS এর ব্যবহার  // AS হল alias বা ছদ্মনাম
+        SELECT id AS ID, name AS student_name, age AS student_age FROM `student` WHERE 1
+        SELECT id AS ID, name AS "student name", age AS student_age FROM `student` WHERE 1  // যদি নামের মধ্যে space রাখতে হয় তবে " " দিতে হবে।
+
+
+
+//! MySQL WHERE all comparison operators list
+
+        1. `=`: Equal to
+        - Example: `column_name = value`
+
+        2. `!=` or `<>`: Not equal to
+        - Example: `column_name != value`
+
+        3. `>`: Greater than
+        - Example: `column_name > value`
+
+        4. `<`: Less than
+        - Example: `column_name < value`
+
+        5. `>=`: Greater than or equal to
+        - Example: `column_name >= value`
+
+        6. `<=`: Less than or equal to
+        - Example: `column_name <= value`
+
+        7. `BETWEEN`: Between a range (inclusive)
+        - Example: `column_name BETWEEN value1 AND value2`
+
+        8. `NOT BETWEEN`: Not between a range
+        - Example: `column_name NOT BETWEEN value1 AND value2`
+
+        9. `LIKE`: Match a pattern using wildcards
+        - Example: `column_name LIKE 'pattern'`
+
+        10. `NOT LIKE`: Does not match a pattern
+            - Example: `column_name NOT LIKE 'pattern'`
+
+        11. `IN`: Matches any value in a list
+            - Example: `column_name IN (value1, value2, ...)`
+
+        12. `NOT IN`: Does not match any value in a list
+            - Example: `column_name NOT IN (value1, value2, ...)`
+
+        13. `IS NULL`: Checks for NULL values
+            - Example: `column_name IS NULL`
+
+        14. `IS NOT NULL`: Checks for non-NULL values
+            - Example: `column_name IS NOT NULL`
+
+        15. `IS TRUE` or `IS FALSE`: Checks for boolean true or false values
+            - Example: `column_name IS TRUE`
+
+        16. `IS NOT TRUE` or `IS NOT FALSE`: Checks for values that are not boolean true or false
+            - Example: `column_name IS NOT TRUE`
+
+
+
+//! MySQL AND, OR, NOT Operators
+
+        1) AND Operator
+            SELECT * FROM `student` WHERE name = "Raj" AND age = 28;
+
+        2) OR Operator
+            SELECT * FROM `student` WHERE name = "Raj" OR age = 28;
+
+        3) NOT Operator
+            SELECT * FROM `student` WHERE NOT age = 28;
+
+        4) Combining Operators
+            SELECT * FROM `student` WHERE (name = "Raj" AND age = 28) OR phone = "01814331351";

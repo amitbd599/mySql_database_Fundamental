@@ -1,0 +1,23 @@
+-- Create a table to store student data
+CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    email VARCHAR(100),
+    phone_number VARCHAR(15)
+);
+
+-- Insert sample student data
+INSERT INTO students (first_name, last_name, date_of_birth, email, phone_number)
+VALUES
+    ('John', 'Doe', '2000-01-15', 'john.doe@example.com', '+1 (123) 456-7890'),
+    ('Alice', 'Smith', '2001-05-20', 'alice.smith@example.com', '+1 (234) 567-8901'),
+    ('Bob', 'Johnson', '1999-08-10', 'bob.johnson@example.com', '+1 (345) 678-9012'),
+    ('Emma', 'Brown', '2000-03-25', 'emma.brown@example.com', '+1 (456) 789-0123'),
+    ('Michael', 'Lee', '2002-02-05', 'michael.lee@example.com', '+1 (567) 890-1234'),
+    ('Sophia', 'Taylor', '2001-11-12', 'sophia.taylor@example.com', '+1 (678) 901-2345'),
+    ('James', 'Clark', '2000-07-30', 'james.clark@example.com', '+1 (789) 012-3456'),
+    ('Olivia', 'Anderson', '2002-04-08', 'olivia.anderson@example.com', '+1 (890) 123-4567'),
+    ('William', 'Martin', '1999-09-18', 'william.martin@example.com', '+1 (901) 234-5678'),
+    ('Ava', 'White', '2001-12-03', 'ava.white@example.com', '+1 (012) 345-6789');
