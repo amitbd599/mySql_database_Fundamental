@@ -1,0 +1,28 @@
+-- Create a table to store personal data
+CREATE TABLE personal_data (
+    person_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    email VARCHAR(100),
+    phone_number VARCHAR(15),
+    address VARCHAR(200),
+    city VARCHAR(50),
+    state VARCHAR(50),
+    postal_code VARCHAR(10),
+    country VARCHAR(50)
+);
+
+-- Insert sample personal data
+INSERT INTO personal_data (first_name, last_name, date_of_birth, email, phone_number, address, city, state, postal_code, country)
+VALUES
+    ('John', 'Doe', '1990-05-15', 'john.doe@example.com', '+1 (123) 456-7890', '123 Main St', 'Anytown', 'CA', '12345', 'USA'),
+    ('Alice', 'Smith', '1985-08-20', 'alice.smith@example.com', '+1 (234) 567-8901', '456 Elm St', 'Anotherville', 'NY', '67890', 'USA'),
+    ('Bob', 'Johnson', '1992-02-10', 'bob.johnson@example.com', '+1 (345) 678-9012', '789 Oak St', 'Sometown', 'TX', '23456', 'USA'),
+    ('Emma', 'Brown', '1988-11-25', 'emma.brown@example.com', '+1 (456) 789-0123', '101 Pine St', 'Smalltown', 'IL', '34567', 'USA'),
+    ('Michael', 'Lee', '1995-03-05', 'michael.lee@example.com', '+1 (567) 890-1234', '222 Cedar St', 'Bigcity', 'CA', '45678', 'USA'),
+    ('Sophia', 'Taylor', '1987-09-12', 'sophia.taylor@example.com', '+1 (678) 901-2345', '333 Birch St', 'Villageton', 'OH', '56789', 'USA'),
+    ('James', 'Clark', '1991-07-30', 'james.clark@example.com', '+1 (789) 012-3456', '444 Willow St', 'Hometown', 'FL', '67890', 'USA'),
+    ('Olivia', 'Anderson', '1986-04-08', 'olivia.anderson@example.com', '+1 (890) 123-4567', '555 Redwood St', 'Mountainville', 'CO', '78901', 'USA'),
+    ('William', 'Martin', '1993-01-18', 'william.martin@example.com', '+1 (901) 234-5678', '666 Oak St', 'Countryside', 'WA', '89012', 'USA'),
+    ('Ava', 'White', '1989-12-03', 'ava.white@example.com', '+1 (012) 345-6789', '777 Cedar St', 'Suburbia', 'MI', '90123', 'USA');
